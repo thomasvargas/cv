@@ -1,0 +1,127 @@
+---
+name: Thomas R. Vargas
+www: thomasrvargas.com
+email: "thomasvargasc@gmail.com"
+github: thomasvargas
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+headcolor: 414141
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+# Academic Appointments
+
+```{r consulting}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Postdoctoral Fellow", "McMaster University", "Hamilton, ON", "June 2020 - Present", "A variety of consulting projects with substantial spatio-temporal modelling tasks.",
+) %>% 
+  detailed_entries(role, dates, company, loc)
+```
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "PhD in Political Science", "2020", "University of Minnesota", "Minneapolis, MN",
+  "Master of Public Policy", "2012", "The College of William & Mary", "Williamsburg, VA",
+  "BS in Foreign Service", "2010", "Georgetown University", "Washington, DC"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+
+# Professional Experience
+
+```{r work}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, 
+  "Editorial Assistant", "American Political Science Review", "Hamilton, ON", "June 2020 - Present",
+  "Visiting Scholar", "Sanford School of Public Policy, Duke University", "Durham, NC", "2019-2020",
+  "Managing Editor", "Comparative Political Studies", "Minneapolis, MN", "2016-2018",
+  "Policy and Training Analyst", "Abdul Latif Jameel Poverty Action Lab (J-PAL)", "Santiago, Chile", "2012-2014",
+) %>% 
+  detailed_entries(role, dates, company, loc)
+```
+
+# Publications
+
+Vargas, Thomas R. 2020. ``Flying Blind: Education Reform in Latin America in the 1990s.'' \textit{International Journal of Education Reform}. Forthcoming. 
+
+# Working Papers
+
+Samuels, David and Thomas R. Vargas. ``Democracy, Land Inequality, and Human Capital Formation.”
+
+Vargas, Thomas R. ``The Political Origins of Education Reform.”
+
+Vargas, Thomas R. ``Slow Burn: The Incremental Effect of Unions on Social Spending in Latin America."
+
+# Awards and Fellowships
+
+```{r awards}
+tribble(
+  ~ company, ~ loc, 
+  "Doctoral Dissertation Fellowship 2019-2020", "University of Minnesota",
+  "Dissertation Research Fellowship 2018", "University of Minnesota",
+  "David and Janis Larson Graduate Research Fellowship in Political Economy 2016-2017", "University of Minnesota",
+  "Robert and Shirley Holt Discovery Fellowship 2014-2015", "University of Minnesota",
+  "Outstanding Graduate Assistant Award 2011 & 2012", "The College of William & Mary"
+) %>% 
+  detailed_entries(company, loc)
+```
+
+# Skills and Languages
+
+Spanish; R, Stata, Python, Git, LaTex
+
+# Teaching Experience
+
+## Primary Instructor
+
+```{r}
+tribble(
+  ~Year, ~Name, ~Duty,
+  '2018', "Political Economy of Development","s",
+) %>% 
+  detailed_entries(
+    where = Year,
+    with = Name
+  )
+```
+
+## Teaching Assistant
+
+```{r}
+tribble(
+  ~Year, ~Name,
+  'University of Minnesota, 2015', "Puzzles in World Politics", 
+  'University of Minnesota, 2016',"Struggles and Issues in the Middle East",
+  'J-PAL, 2012-2014', "Evaluating Social Programs",
+) %>% 
+  detailed_entries(
+    where = Year,
+    with = Name
+  )
+```
+# References
+
+```{r}
+tribble(
+  ~Name, ~Title, ~Contact,
+  'David Samuels',  "Distinguished McKnight University Professor, University of Minnesota", "dsamuels@umn.edu",
+  'Teri Caraway',  "Professor of Political Science,  University of Minnesota", "caraway@umn.edu",
+  'John Freeman',  "John Black Johnston Distinguished Professor, University of Minnesota", "freeman@umn.edu"
+) %>% 
+  detailed_entries(
+    where = Contact,
+    with = Name, 
+    what = Title
+  )
+
